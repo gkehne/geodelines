@@ -51,10 +51,10 @@ def squiggles(height, width, step, gap):
 	return(lines)
 
 
-# this is the runner method.
+# this is the main method.
 # parameters are dimensions of screen, step within line, gap between lines,
 # output file name
-def draw(height, width, step, gap, name):
+def main (height, width, step, gap, name):
 	# generate squiggles
 	lines = squiggles(height, width, step, gap)
 	# new image created
@@ -77,6 +77,8 @@ def draw(height, width, step, gap, name):
 	# saves the generated Image
 	im.save(name + ".jpg")
 
-# This creates an image 2000x2000 named geode_test.jpg with lines that take
-# 4-pixel steps and sit 30 pixels apart.
-draw(2000, 2000, 4, 30, "geode_test")
+
+# Default behavior: create an image 2000x2000 named geode_test.jpg with 
+# lines that take 4-pixel steps and sit 30 pixels apart.
+if __name__ == '__main__':
+	main(2000, 2000, 4, 30, "geode_test")
